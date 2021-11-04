@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_welcome.*
 
-class WelcomeActivity : AppCompatActivity() {
+class WelcomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_welcome)
@@ -14,6 +14,7 @@ class WelcomeActivity : AppCompatActivity() {
            // startActivity(Intent(this,LeagueActivity::class.java))
             var leagueIntent = Intent(this,LeagueActivity::class.java) //2nd method to transit one page to second
             //Intent to go to specific activity or apps
+            // this, it is context allow access to specific resources
             startActivity(leagueIntent)
         }
     }
