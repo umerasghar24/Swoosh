@@ -7,6 +7,7 @@
     tools:context=".LeagueActivity">
 
     <ImageView
+        android:contentDescription="@string/background_image"
         android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -20,6 +21,7 @@
         app:srcCompat="@drawable/desiredleaguebg" />
 
     <ImageView
+        android:contentDescription="@string/logo"
         android:id="@+id/imageView2"
         android:layout_width="88dp"
         android:layout_height="29dp"
@@ -35,7 +37,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DESIRED LEAGUE:"
+        android:text="@string/desired_league"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
@@ -64,9 +66,9 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:background="@drawable/swoosh_toggle"
-            android:text="CO-ED"
-            android:textOff="CO-ED"
-            android:textOn="CO-ED" />
+            android:text="@string/co_ed"
+            android:textOff="@string/co_ed"
+            android:textOn="@string/co_ed" />
 
         <ToggleButton
             android:id="@+id/toggleButton"
@@ -76,9 +78,9 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/swoosh_toggle"
             android:textColor="@color/white"
-            android:text="Men"
-            android:textOff="Men"
-            android:textOn="Men" />
+            android:text="@string/men"
+            android:textOff="@string/men"
+            android:textOn="@string/men" />
 
         <ToggleButton
             android:id="@+id/toggleButton2"
@@ -86,9 +88,9 @@
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:background="@drawable/swoosh_toggle"
-            android:text="Women"
-            android:textOff="Women"
-            android:textOn="Women" />
+            android:text="@string/women"
+            android:textOff="@string/women"
+            android:textOn="@string/women" />
 
     </LinearLayout>
     <Button
@@ -103,5 +105,5 @@
         android:layout_marginBottom="16dp"
         android:textSize="18sp"
         android:fontFamily="@font/montserrat"
-        android:text="Next"/>
+        android:text="@string/next"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
