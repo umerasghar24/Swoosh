@@ -1,12 +1,18 @@
 package com.example.swoosh
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_league.*
-
+const val EXTRA_String =""
+fun leagueIntent(context:Context ,selectedLeague:String){
+    val leagueIntent =Intent(context,LeagueActivity::class.java)
+    leagueIntent.putExtra(EXTRA_String,selectedLeague)
+    context.startActivity(leagueIntent)
+}
 class LeagueActivity :
     BaseActivity() { //we inherit from base activity so it will tell about activity life cycle
     var selectedLeague = "" //if one toogle button is clicked other shouldnt
@@ -37,7 +43,7 @@ class LeagueActivity :
     }
 
 
-    fun leagueNextClicked(vie: View) {
+    fun leagueNextClicked(view: View) {
         if (selectedLeague != "") { //using so user can not go to next page without selecting anything
             /* val skillIntent =Intent(this,SkillActivity::class.java)
              skillIntent.putExtra(EXTRA_LEAGUE,selectedLeague)
