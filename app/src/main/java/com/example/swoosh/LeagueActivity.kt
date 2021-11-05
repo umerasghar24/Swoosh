@@ -4,21 +4,50 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_league.*
 
-class LeagueActivity : BaseActivity() { //we inherit from base activity so it will tell about activity life cycle
+class LeagueActivity :
+    BaseActivity() { //we inherit from base activity so it will tell about activity life cycle
+    var selectedLeague = "" //if one toogle button is clicked other shouldnt
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
     }
-    fun leagueNextClicked(vie:View){
-        val skillIntent =Intent(this,SkillActivity::class.java)
-        startActivity(skillIntent)
+
+    fun onMensClicked(view: View) { //if we clicked on button other should remain off
+        womensLeagueBtn.isChecked = false //other will remain off
+        coedLeagueBtn.isChecked = false
+        selectedLeague = "mens"
 
     }
-    fun onMensClicked(view:View){
+
+    fun onWomensClicked(view: View) { //if we clicked on button other should remain off
+        mensLeagueBtn.isChecked = false
+        coedLeagueBtn.isChecked = false
+        selectedLeague = "womens"
 
     }
-    fun onWomensClicked(view:View){
+
+    fun onCoedClicked(view: View) { //if we clicked on button other should remain off
+        womensLeagueBtn.isChecked = false
+        mensLeagueBtn.isChecked = false
+        selectedLeague = "coed"
 
     }
+
+
+    fun leagueNextClicked(vie: View) {
+        if (selectedLeague != "") { //using so user can not go to next page without selecting anything
+            /* val skillIntent =Intent(this,SkillActivity::class.java)
+             skillIntent.putExtra(EXTRA_LEAGUE,selectedLeague)
+             startActivity(skillIntent)*/
+            startSkillActivity(this, selectedLeague,4332)
+        } else {
+            Toast.makeText(this, "Please select a League", Toast.LENGTH_SHORT).show()
+        }
+
+
+    }
+
 }
