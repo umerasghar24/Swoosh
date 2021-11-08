@@ -21,13 +21,13 @@ fun startSkillActivity(context: Context, selectedLeague: String) {
 class SkillActivity : BaseActivity() {
     var league = ""
     var skill =""
+    var age = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
 
         league = intent.getStringExtra(EXTRA_LEAGUE).toString()
 //        league = intent.getIntExtra(KEY_NEW,34234543).toString()
-        println(league)
     }
     fun onBeginnerClick(view: View){
         ballerSkillBtn.isChecked=false
@@ -39,7 +39,7 @@ class SkillActivity : BaseActivity() {
     }
     fun skillSelected(view: View){
         if (skill!=""){
-                startfinsihActivity(this,skill,league)
+               startAgeActivity(this,age,league,skill)
         }else
             Toast.makeText(this, "Select a skill first", Toast.LENGTH_SHORT).show()
     }

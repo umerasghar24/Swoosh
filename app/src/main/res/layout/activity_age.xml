@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.AgeActivity">
+    <ImageView
+        android:contentDescription="@string/background_image"
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:srcCompat="@drawable/beginnerballerbg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="175dp" />
+    <ImageView
+        android:contentDescription="@string/logo"
+        android:id="@+id/imageView2"
+        android:layout_width="88dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/swooshlogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/skilltxt"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/select_age_prefrence"
+        android:fontFamily="@font/montserrat"
+        android:textSize="18sp"
+        android:layout_marginTop="34dp"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/skilltxt">
+
+        <ToggleButton
+            android:id="@+id/childrenAgeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/swoosh_toggle"
+            android:fontFamily="@font/montserrat"
+            android:onClick="onAgeClick"
+            android:text="@string/children"
+            android:textColor="@color/white"
+            android:textOff="@string/children"
+            android:textOn="@string/children" />
+
+        <ToggleButton
+            android:id="@+id/adultAgeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/swoosh_toggle"
+            android:fontFamily="@font/montserrat"
+            android:onClick="onAgeChilClick"
+            android:text="@string/adult"
+            android:textColor="@color/white"
+            android:textOff="@string/adult"
+            android:textOn="@string/adult" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/finishBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/swoosh_button"
+        android:fontFamily="@font/montserrat"
+        android:onClick="onAgeSelected"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

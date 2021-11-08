@@ -48,7 +48,7 @@ class LeagueActivity :
             /* val skillIntent =Intent(this,SkillActivity::class.java)
              skillIntent.putExtra(EXTRA_LEAGUE,selectedLeague)
              startActivity(skillIntent)*/
-            startSkillActivity(this, selectedLeague,4332)
+            startSkillActivity(this, selectedLeague)
         } else {
             Toast.makeText(this, "Please select a League", Toast.LENGTH_SHORT).show()
         }

@@ -8,10 +8,13 @@
     <string name="get_started">GET STARTED</string>
     <string name="men">Men</string>
     <string name="women">Women</string>
-    <string name="next">Next</string>
     <string name="desired_league">DESIRED LEAGUE:</string>
     <string name="i_am_a">I Am a:</string>
     <string name="beginner">BEGINNER</string>
     <string name="baller">BALLER</string>
     <string name="finish">Finish</string>
+    <string name="select_age_prefrence">Select Age Prefrence</string>
+    <string name="children">Children</string>
+    <string name="adult">Adult</string>
+    <string name="next">Next</string>
 </resources>
