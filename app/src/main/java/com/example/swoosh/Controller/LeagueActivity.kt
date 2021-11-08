@@ -3,6 +3,7 @@ package com.example.swoosh.Controller
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.widget.Toast
 import com.example.swoosh.Model.Player
@@ -19,9 +20,19 @@ class LeagueActivity :
     BaseActivity() { //we inherit from base activity so it will tell about activity life cycle
 //    var selectedLeague = "" //if one toogle button is clicked other shouldnt
     var player =Player("","","")
+    // if we want that when we rotate our screen data shall be saved we use this
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(EXTRA_PLAYER, player)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
+    }
+//this
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+    this.player= savedInstanceState.getParcelable(EXTRA_PLAYER)!!
     }
 
     fun onMensClicked(view: View) { //if we clicked on button other should remain off

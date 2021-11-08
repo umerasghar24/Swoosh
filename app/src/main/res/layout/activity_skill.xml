@@ -95,7 +95,7 @@
         android:background="@drawable/swoosh_button"
         android:fontFamily="@font/montserrat"
         android:onClick="skillSelected"
-        android:text="@string/finish"
+        android:text="@string/next"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

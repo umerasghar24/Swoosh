@@ -3,7 +3,7 @@ package com.example.swoosh.Model
 import android.os.Parcel
 import android.os.Parcelable
 
-class Player(var leaugue: String?, var skill: String?, var age: String?):Parcelable{
+class Player(var leaugue: String?, var skill: String?, var age: String?):Parcelable{ //after adding parcelable just press alt+enter
 
 
 
