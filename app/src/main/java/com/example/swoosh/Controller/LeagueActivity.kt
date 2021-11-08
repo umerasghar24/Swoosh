@@ -5,17 +5,20 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.swoosh.Model.Player
 import com.example.swoosh.R
+import com.example.swoosh.Utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_league.*
 const val EXTRA_String =""
-fun startleagueActivity(context:Context ,selectedLeague:String){
-    val leagueIntent =Intent(context, LeagueActivity::class.java)
-    leagueIntent.putExtra(EXTRA_String,selectedLeague)
-    context.startActivity(leagueIntent)
-}
+//fun startleagueActivity(context:Context ,selectedLeague:String){
+//    val leagueIntent =Intent(context, LeagueActivity::class.java)
+//    leagueIntent.putExtra(EXTRA_String,selectedLeague)
+//    context.startActivity(leagueIntent)
+//}
 class LeagueActivity :
     BaseActivity() { //we inherit from base activity so it will tell about activity life cycle
-    var selectedLeague = "" //if one toogle button is clicked other shouldnt
+//    var selectedLeague = "" //if one toogle button is clicked other shouldnt
+    var player =Player("","","")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
@@ -24,33 +27,31 @@ class LeagueActivity :
     fun onMensClicked(view: View) { //if we clicked on button other should remain off
         womensLeagueBtn.isChecked = false //other will remain off
         coedLeagueBtn.isChecked = false
-        selectedLeague = "mens"
+        player.leaugue = "mens"
 
     }
 
     fun onWomensClicked(view: View) { //if we clicked on button other should remain off
         mensLeagueBtn.isChecked = false
         coedLeagueBtn.isChecked = false
-        selectedLeague = "womens"
+        player.leaugue = "womens"
 
     }
 
     fun onCoedClicked(view: View) { //if we clicked on button other should remain off
         womensLeagueBtn.isChecked = false
         mensLeagueBtn.isChecked = false
-        selectedLeague = "coed"
+        player.leaugue = "coed"
 
     }
 
-
     fun leagueNextClicked(view: View) {
-        if (selectedLeague != "") { //using so user can not go to next page without selecting anything
-            /* val skillIntent =Intent(this,SkillActivity::class.java)
-             skillIntent.putExtra(EXTRA_LEAGUE,selectedLeague)
-             startActivity(skillIntent)*/
-            startSkillActivity(this, selectedLeague)
+        if (player.leaugue != "") {
+            val skillActivity = Intent(this, SkillActivity::class.java)
+            skillActivity.putExtra(EXTRA_PLAYER, player)
+            startActivity(skillActivity)
         } else {
-            Toast.makeText(this, "Please select a League", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please select a league.", Toast.LENGTH_SHORT).show()
         }
 
 
